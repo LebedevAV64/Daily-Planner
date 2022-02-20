@@ -1,0 +1,26 @@
+h1{
+    text-transform: uppercase;
+    font-weight: bold !important;
+    text-shadow: 0 0 3px white;
+    text-align: center;
+}
+.block{
+    background: darkkhaki;
+    padding: 3px;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 0 5px black;
+}
+.content{
+    background: grey;
+    padding: 3px;
+    color: white;
+    text-align: center;
+}
+#listDiv{
+    background: khaki;
+    padding: 5px;
+}
+ul, li, #add{
+    margin: 3px;
+}

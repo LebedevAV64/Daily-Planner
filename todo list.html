@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>TO DO LIST</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="block">
+        <h1 class="title is-1">to do list</h1>
+        <div class="content">
+            <label class="label">Need To Do:</label>
+            <input class="input" type="text" id="inp">
+            <input class="button is-warning is-rounded" type="button" id="add" value="ADD POINT" onclick="addParagraph();">
+        </div>
+        <div id="listDiv">
+            <ul id="list" class="list"></ul>
+        </div>
+    </div>
+    <script src="todo_js.js"></script>
+</body>
+</html>
