@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TO-DO LIST</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="div1">
+            <h1>TO DO LIST</h1>
+            <div id="inpDiv">
+                <label id="lbl">NEED TO DO:</label>
+                <input type="text" id="inp">
+                <input type="button" id="btn" value="ADD" onclick="addParagraph()">
+            </div>
+            <div id="listDiv">
+                <ol id="list"></ol>
+            </div>
+        </div>
+        <script src="todoJS.js"></script>
+    </body>
+</html>
