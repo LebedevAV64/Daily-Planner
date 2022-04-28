@@ -1,19 +1,46 @@
-#div1{
-    background-color: khaki;
-    padding: 5px;
-    max-width: 500px;
-    margin: auto;
-    box-shadow: 0 0 5px black;   
+body{
+    background-color: #313131;
 }
-h1{
-    text-align: center;
+
+#header{
+    background: linear-gradient(#65799B,#313131);
 }
-#inpDiv{
-    background-color:dimgrey;
-    padding: 5px;
-    text-align: center;
+
+.divider{
+    background-color: #65799B;
+}
+
+.footer{
+    background: linear-gradient(#313131,#65799B);
     color: white;
 }
-button{
-    margin: 3px;
+
+.title{
+    text-transform: uppercase;
+    text-shadow: 0 0 5px white;
+}
+
+.subtitle{
+    color:white;
+    text-shadow: 0 0 5px black;
+}
+
+.label{
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: white;
+}
+
+.section:hover{
+    box-shadow: 0 0 5px #65799B;
+    background-color: #65799B;
+}
+
+.button{
+    box-shadow: 0 0 3px #65799B;
+}
+
+li{
+    padding: 3px;
+    color:white;
 }
