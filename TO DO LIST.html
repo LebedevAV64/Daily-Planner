@@ -1,23 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>TO-DO LIST</title>
-        <link href="style.css" rel="stylesheet">
+        <title>Daily planner</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <script src="https://kit.fontawesome.com/292274ebff.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div id="div1">
-            <h1>TO DO LIST</h1>
-            <div id="inpDiv">
-                <label id="lbl">NEED TO DO:</label>
-                <input type="text" id="inp">
-                <input type="button" id="btn" value="ADD" onclick="addParagraph()">
-            </div>
-            <div id="listDiv">
-                <ol id="list"></ol>
+        <div class="columns" id="header">
+            <div class="column is-full has-text-centered">
+                <div class="content">
+                    <h1 class="title is-1">Daily planner</h1>
+                </div>
+                <div class="field is-grouped is-grouped-centered">
+                    <div class="control">
+                        <h3 class="subtitle">choose a day of the week</h3>
+                    </div>
+                    <div class="control">
+                        <div class="select is-small">
+                            <select id="weekDay">
+                                <option value="1">monday</option>
+                                <option value="2">tuesday</option>
+                                <option value="3">wednesday</option>
+                                <option value="4">thursday</option>
+                                <option value="5">friday</option>
+                                <option value="6">saturday</option>
+                                <option value="7">sunday</option>
+                                <option value="8">notes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-grouped is-grouped-centered">
+                    <div class="control">
+                        <input class="input is-small" type="text" placeholder="need to do" id="inp">
+                    </div>
+                    <div class="control">
+                        <button class="button is-small is-dark" id="btn" onclick="addPoint()">
+                            <span class="icon">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+                            <span>ADD</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-        <script src="todoJS.js"></script>
+        <hr class="divider">
+        <div class="columns">
+            <div class="column">
+                <div class="section">
+                    <label class="label">monday</label>
+                    <div class="content">
+                        <ol type="1" id="mondaylist"></ol>
+                        <button class="button is-small is-dark" title="delete all day" onclick="deleteMondayList()">
+                            <span class="icon">
+                                <i class="fa-solid fa-trash"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="section">
+                    <label class="label">tuesday</label>
+                    <div class="content">
+                        <ol type="1" id="tuesdaylist"></ol>
+                        <button class="button is-small is-dark" title="delete all day" onclick="deleteTuesdayList()">
+                            <span class="icon">
+                                <i class="fa-solid fa-trash"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <div class="section">
+                    <label class="label">wednesday</label>
+                    <div class="content">
+                        <ol type="1" id="wednesdaylist"></ol>
+                        <button class="button is-small is-dark" title="delete all day" onclick="deleteWednesdayList()">
+                            <span class="icon">
+                                <i class="fa-solid fa-trash"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="section">
+                    <label class="label">thursday</label>
+                    <div class="content">
+                        <ol type="1" id="thursdaylist"></ol>
+                        <button class="button is-small is-dark" title="delete all day" onclick="deleteThursdayList()">
+                            <span class="icon">
+                                <i class="fa-solid fa-trash"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <div class="section">
+                    <label class="label">friday</label>
+                    <div class="content">
+                        <ol type="1" id="fridaylist"></ol>
+                        <button class="button is-small is-dark" title="delete all day" onclick="deleteFridayList()">
+                            <span class="icon">
+                                <i class="fa-solid fa-trash"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="section">
+                    <label class="label">saturday</label>
+                    <div class="content">
+                        <ol type="1" id="saturdaylist"></ol>
+                        <button class="button is-small is-dark" title="delete all day" onclick="deleteSaturdayList()">
+                            <span class="icon">
+                                <i class="fa-solid fa-trash"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <div class="section">
+                    <label class="label">sunday</label>
+                    <div class="content">
+                        <ol type="1" id="sundaylist"></ol>
+                        <button class="button is-small is-dark" title="delete all day" onclick="deleteSundayList()">
+                            <span class="icon">
+                                <i class="fa-solid fa-trash"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="section">
+                    <label class="label">notes</label>
+                    <div class="content">
+                        <ol type="1" id="noteslist"></ol>
+                        <button class="button is-small is-dark" title="delete all day" onclick="deleteNotesList()">
+                            <span class="icon">
+                                <i class="fa-solid fa-trash"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="divider">
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p>To clear the entire area - click "Delete All", for help - click "Help"</p>
+                <div class="buttons is-centered">
+                    <button class="button is-small is-dark" onclick="deleteAll()">
+                        <span class="icon">
+                            <i class="fa-solid fa-trash"></i>
+                        </span>
+                        <span>Delete All</span>
+                    </button>
+                    <button class="button is-small is-dark">
+                        <span class="icon">
+                            <i class="fa-solid fa-info"></i>
+                        </span>
+                        <span>Help</span>
+                    </button>
+                    <button class="button is-small is-dark">
+                        <span class="icon">
+                            <i class="fa-solid fa-gear"></i>
+                        </span>
+                        <span>Settings</span>
+                    </button>
+                </div>
+                <address>Russia, Saratov</address>
+            </div>
+        </footer>
+        <script src="script.js"></script>
     </body>
 </html>
