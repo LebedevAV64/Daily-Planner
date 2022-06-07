@@ -80,10 +80,10 @@ function addPoint(){
     }
 
     function editPoint(){
-        editButton.disabled = true;
-        priorityButton.disabled = true;
-        completeButton.disabled = true;
-        deleteButton.disabled = true;
+        editButton.style.display = "none";
+        priorityButton.style.display = "none";
+        completeButton.style.display = "none";
+        deleteButton.style.display = "none";
         let editInput = document.createElement("input");
         editInput.style.marginLeft = "3px";
         let editInputButton = document.createElement("button");
@@ -113,17 +113,17 @@ function addPoint(){
             point.appendChild(priorityButton);
             point.appendChild(completeButton);
             point.appendChild(deleteButton);
-            editButton.disabled = false;
-            priorityButton.disabled = false;
-            completeButton.disabled = false;
-            deleteButton.disabled = false;
+            editButton.style.display = "inline";
+            priorityButton.style.display = "inline";
+            completeButton.style.display = "inline";
+            deleteButton.style.display = "inline";
         }
 
         function editClose(){
-            editButton.disabled = false;
-            priorityButton.disabled = false;
-            completeButton.disabled = false;
-            deleteButton.disabled = false;
+            editButton.style.display = "inline";
+            priorityButton.style.display = "inline";
+            completeButton.style.display = "inline";
+            deleteButton.style.display = "inline";
             point.removeChild(editInput);
             point.removeChild(editInputButton);
             point.removeChild(editCloseButton);
@@ -133,8 +133,10 @@ function addPoint(){
     function completePoint(){
         if(point.style.textDecoration == "line-through"){
             point.style.textDecoration = "";
+            point.style.color = "white";
         }else{
             point.style.textDecoration = "line-through";
+            point.style.color = "black";
         }
     }
 
