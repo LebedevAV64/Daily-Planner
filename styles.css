@@ -44,3 +44,15 @@ li{
     padding: 3px;
     color:white;
 }
+
+@media all and (max-width: 768px){
+    .label{
+        text-align: center;
+    }
+    #deleteMonday, #deleteTuesday, #deleteWednesday, #deleteThursday, #deleteFriday, #deleteSaturday, #deleteSunday, #deleteNotes{
+        float:right;
+    }
+    .section{
+        margin: 15px;
+    }
+}
