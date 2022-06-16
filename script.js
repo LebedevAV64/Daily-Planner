@@ -148,82 +148,58 @@ function addPoint(){
     }
 }
 
-function deleteMondayList(){
+function deleteList(name){
     let result = confirm("are you sure?");
     if(result == true){
-        let ol = document.getElementById("mondaylist");
-        while(ol.firstChild){
-            ol.removeChild(ol.firstChild);
-        }
-    }
-}
-
-function deleteTuesdayList(){
-    let result = confirm("are you sure?");
-    if(result == true){
-        let ol = document.getElementById("tuesdaylist");
-        while(ol.firstChild){
-            ol.removeChild(ol.firstChild);
-        }
-    }
-}
-            
-function deleteWednesdayList(){
-    let result = confirm("are you sure?");
-    if(result == true){
-        let ol = document.getElementById("wednesdaylist");
-        while(ol.firstChild){
-            ol.removeChild(ol.firstChild);
-        }
-    }
-}
-            
-function deleteThursdayList(){
-    let result = confirm("are you sure?");
-    if(result == true){
-        let ol = document.getElementById("thursdaylist");
-        while(ol.firstChild){
-            ol.removeChild(ol.firstChild);
-        }
-    }
-}
-            
-function deleteFridayList(){
-    let result = confirm("are you sure?");
-    if(result == true){
-        let ol = document.getElementById("fridaylist");
-        while(ol.firstChild){
-            ol.removeChild(ol.firstChild);
-        }
-    }
-}
-            
-function deleteSaturdayList(){
-    let result = confirm("are you sure?");
-    if(result == true){
-        let ol = document.getElementById("saturdaylist");
-        while(ol.firstChild){
-            ol.removeChild(ol.firstChild);
-        }
-    }
-}
-            
-function deleteSundayList(){
-    let result = confirm("are you sure?");
-    if(result == true){
-        let ol = document.getElementById("sundaylist");
-        while(ol.firstChild){
-            ol.removeChild(ol.firstChild);
-        }
-    }
-}
-            
-function deleteNotesList(){
-    let result = confirm("are you sure?");
-    if(result == true){
-        let ol = document.getElementById("noteslist");
-        while(ol.firstChild){
-            ol.removeChild(ol.firstChild);
+        switch(name){
+            case "deleteMonday":
+                let monday = document.getElementById("mondaylist");
+                while(monday.firstChild){
+                    monday.removeChild(monday.firstChild);
+                }
+                break;
+            case "deleteTuesday":
+                let tuesday = document.getElementById("tuesdaylist");
+                while(tuesday.firstChild){
+                    tuesday.removeChild(tuesday.firstChild);
+                }
+                break;
+            case "deleteWednesday":
+                let wednesday = document.getElementById("wednesdaylist");
+                while(wednesday.firstChild){
+                    wednesday.removeChild(wednesday.firstChild);
+                }
+                break;
+            case "deleteThursday":
+                let thursday = document.getElementById("thursdaylist");
+                while(thursday.firstChild){
+                    thursday.removeChild(thursday.firstChild);
+                }
+                break;
+            case "deleteFriday":
+                let friday = document.getElementById("fridaylist");
+                while(friday.firstChild){
+                    friday.removeChild(friday.firstChild);
+                }
+                break;
+            case "deleteSaturday":
+                let saturday = document.getElementById("saturdaylist");
+                while(saturday.firstChild){
+                    saturday.removeChild(saturday.firstChild);
+                }
+                break;
+            case "deleteSunday":
+                let sunday = document.getElementById("sundaylist");
+                while(sunday.firstChild){
+                    sunday.removeChild(sunday.firstChild);
+                }
+                break;
+            case "deleteNotes":
+                let notes = document.getElementById("noteslist");
+                while(notes.firstChild){
+                    notes.removeChild(notes.firstChild);
+                }
+                break;
         }
     }
 }
