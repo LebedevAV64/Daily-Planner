@@ -3,6 +3,8 @@ body{
 }
 
 #header{
+    position: sticky;
+    top: 0;
     background: linear-gradient(#65799B,#313131);
 }
 
@@ -37,6 +39,7 @@ body{
 }
 
 .button{
+    position: static;
     box-shadow: 0 0 3px #65799B;
 }
 
