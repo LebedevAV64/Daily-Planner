@@ -1,0 +1,51 @@
+body{
+    background-color: #313131;
+}
+#header{
+    position: sticky;
+    top: 0;
+    background: linear-gradient(DarkOliveGreen,#313131);
+}
+.divider{
+    background-color: DarkOliveGreen;
+}
+.footer{
+    background: linear-gradient(#313131,DarkOliveGreen);
+    color: white;
+}
+.title{
+    text-transform: uppercase;
+    text-shadow: 0 0 5px white;
+}
+.subtitle{
+    color:white;
+    text-shadow: 0 0 5px black;
+}
+.label{
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: white;
+}
+.section:hover{
+    box-shadow: 0 0 5px DarkOliveGreen;
+    background-color: DarkOliveGreen;
+}
+.button{
+    position: static;
+    box-shadow: 0 0 3px DarkOliveGreen;
+}
+li{
+    padding: 3px;
+    color:white;
+}
+@media all and (max-width: 768px){
+    .label{
+        text-align: center;
+    }
+    #deleteMonday, #deleteTuesday, #deleteWednesday, #deleteThursday, #deleteFriday, #deleteSaturday, #deleteSunday, #deleteNotes{
+        float:right;
+    }
+    .section{
+        margin: 15px;
+    }
+}
