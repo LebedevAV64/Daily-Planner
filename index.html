@@ -6,7 +6,7 @@
         <title>Daily planner</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
         <script src="https://kit.fontawesome.com/292274ebff.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="Styles/sapphire.css" id="theme">
     </head>
     <body>
         <div class="columns" id="header">
@@ -178,16 +178,32 @@
                         </span>
                         <span>Help</span>
                     </button>
-                    <button class="button is-small is-dark">
+                    <button class="button is-small is-dark" onclick="showBlock()">
                         <span class="icon">
                             <i class="fa-solid fa-gear"></i>
                         </span>
                         <span>Settings</span>
                     </button>
                 </div>
+                <div class="field is-grouped-centered" id="buttons" style="display: none;">
+                    <p>select a topic by clicking on the appropriate button</p>
+                    <p class="control">
+                        <button type="button" class="button p-3 is-dark is-small" style="color: Goldenrod;" id="amber" onclick="amber();">AMBER</button>
+                    </p>
+                    <p class="control">
+                        <button type="button" class="button p-3 is-dark is-small" style="color: DarkOliveGreen;" id="emerald" onclick="emerald();">EMERALD</button>
+                    </p>
+                    <p class="control">
+                        <button type="button" class="button p-3 is-dark is-small" style="color: #65799B;" id="sapphire" onclick="sapphire();">SAPPHIRE</button>
+                    </p>
+                    <p class="control">
+                        <button type="button" class="button p-3 is-dark is-small" style="color: IndianRed;" id="ruby" onclick="ruby();">RUBY</button>
+                    </p>
+                </div>
                 <address>Russia, Saratov</address>
             </div>
         </footer>
+
         <div class="modal" id="modal-help">
             <div class="modal-background"></div>
             <div class="modal-card">
@@ -225,47 +241,8 @@
                 </footer>
             </div>
         </div>
-        <script src="script.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                function openModal($el) {
-                    $el.classList.add('is-active');
-                }
-
-                function closeModal($el) {
-                    $el.classList.remove('is-active');
-                }
-
-                function closeAllModals() {
-                    (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-                        closeModal($modal);
-                    });
-                }
-
-                (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
-                    const modal = $trigger.dataset.target;
-                    const $target = document.getElementById(modal);
-
-                    $trigger.addEventListener('click', () => {
-                        openModal($target);
-                    });
-                });
-
-                (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-                    const $target = $close.closest('.modal');
-
-                    $close.addEventListener('click', () => {
-                        closeModal($target);
-                    });
-                });
-
-                document.addEventListener('keydown', (event) => {
-                    const e = event || window.event;
-                    if (e.keyCode === 27) {
-                        closeAllModals();
-                    }
-                });
-            });
-        </script>
+        <script src="Scripts/script.js"></script>
+        <script src="Scripts/modal.js"></script>
+        <script src="Scripts/themes.js"></script>
     </body>
 </html>
