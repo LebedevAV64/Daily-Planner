@@ -29,6 +29,7 @@ body{
 .section:hover{
     box-shadow: 0 0 5px #65799B;
     background-color: #65799B;
+    transition: background-color 500ms linear;
 }
 .button{
     position: static;
